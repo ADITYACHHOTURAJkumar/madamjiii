@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        section {
+            display: none;
+            padding: 20px;
+            background-color: #fef9e7;
+            min-height: 100vh;
+        }
+        section.active {
+            display: block;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        img {
+            max-width: 50%;
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach((section) => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <!-- Home Page -->
+    <section id="home" class="active">
+        <h1>Happy anniversary, [darling]!</h1>
+        <img src="images/cover.jpg" alt="Cover Image">
+        <p>Welcome to your special birthday surprise!</p>
+        <button onclick="showSection('question1')">Start</button>
+    </section>
+
+    <!-- Question 1 -->
+    <section id="question1">
+        <h2>Do you think you're the best gift in my life?</h2>
+        <button onclick="showSection('question2')">Yes</button>
+        <button onclick="showSection('question2')">No</button>
+    </section>
+
+    <!-- Question 2 -->
+    <section id="question2">
+        <h2>Do you love surprises?</h2>
+        <button onclick="showSection('result')">Yes</button>
+        <button onclick="showSection('result')">No</button>
+    </section>
+
+    <!-- Result -->
+    <section id="result">
+        <h1>Your Birthday Surprise!</h1>
+        <p>You are the most special person in my life, and this is just a small token of my love. Happy ANNIVERSARY!</p>
+        <img src="images/ending.jpg" alt="Ending Image">
+    </section>
+</body>
+</html>
